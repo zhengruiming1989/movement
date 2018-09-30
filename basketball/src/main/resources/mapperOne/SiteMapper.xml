@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.side.movement.basketball.mapperOne.SiteMapper" >
+  <resultMap id="BaseResultMap" type="com.side.movement.basketball.entity.Site" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="lng" property="lng" jdbcType="DECIMAL" />
+    <result column="lat" property="lat" jdbcType="DECIMAL" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="area" property="area" jdbcType="VARCHAR" />
+    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+    <result column="environment" property="environment" jdbcType="VARCHAR" />
+    <result column="note" property="note" jdbcType="VARCHAR" />
+    <result column="charge_type" property="chargeType" jdbcType="TINYINT" />
+    <result column="charge_details" property="chargeDetails" jdbcType="VARCHAR" />
+    <result column="side_count" property="sideCount" jdbcType="DECIMAL" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+    <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, lng, lat, address, province, city, area, telephone, environment, note, 
+    charge_type, charge_details, side_count, type, updated_at, created_at
+  </sql>
+  <select id="list" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select <include refid="Base_Column_List" /> from s_site where 1=1
+    <if test="name!=null">
+      and name LIKE CONCAT('%',#{name},'%')
+    </if>
+
+  </select>
+
+</mapper>

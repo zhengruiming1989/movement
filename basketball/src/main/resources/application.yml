@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: candy
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+
+server:
+  port: 2222
+  tomcat:
+    uri-encoding: UTF-8
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+
+mybatis:
+  mapper-locations: classpath:mappers/*.xml
+
+mysql:
+  datasource:
+    test1:
+      url: jdbc:mysql://127.0.0.1:3306/side?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: root
+      minPoolSize: 3
+      maxPoolSize: 25
+      maxLifetime: 20000
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      testQuery: select 1
+    test2:
+      url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: root
+      minPoolSize: 3
+      maxPoolSize: 25
+      maxLifetime: 20000
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      testQuery: select 1
