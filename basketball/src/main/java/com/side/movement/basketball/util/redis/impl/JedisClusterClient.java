@@ -26,7 +26,7 @@ import redis.clients.jedis.exceptions.JedisException;
 public class JedisClusterClient implements IJedisClient {
 	private Logger logger = LoggerFactory.getLogger(JedisClusterClient.class);
 
-	@Autowired
+
 	private JedisCluster jedisCluster;
 
 

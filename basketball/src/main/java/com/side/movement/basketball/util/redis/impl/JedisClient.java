@@ -25,7 +25,7 @@ import redis.clients.jedis.exceptions.JedisException;
 @Component
 public class JedisClient implements IJedisClient {
 	private static Logger logger = LoggerFactory.getLogger(JedisClient.class);
-	@Autowired
+
 	private JedisPool jedisPool;
 
 	/**
